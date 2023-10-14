@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { BakeShadows, OrbitControls, Stage } from "@react-three/drei";
 import Shoe from "src/pages/ShoesScene/components/Shoe";
+import { routeNaming } from "src/constants/route";
 
 const ShoesScene: React.FC = () => {
   return (
@@ -23,9 +24,16 @@ const ShoesScene: React.FC = () => {
           <OrbitControls makeDefault autoRotate />
         </Canvas>
       </div>
-      <button className="py-2 px-6 border border-1 border-white text-white rounded hover:text-green hover:border-green">
-        <Link to="/dice-scene">Dice scene</Link>
-      </button>
+      <div className="flex">
+        {routeNaming.map((route) => (
+          <button
+            key={route.path}
+            className="py-2 px-6 border border-1 border-white text-white rounded hover:text-green hover:border-green mr-2"
+          >
+            <Link to={route.path}>{route.naming}</Link>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
