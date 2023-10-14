@@ -2,9 +2,7 @@ import React from "react";
 
 const LoadingPage: React.FC = () => {
   return (
-    <div>
-      <h1>LoadingPage</h1>
-    </div>
+    <div className="w-full h-screen bg-black overflow-hidden flex flex-col justify-center items-center" />
   );
 };
 
