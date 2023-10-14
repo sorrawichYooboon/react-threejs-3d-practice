@@ -27,17 +27,17 @@ function Overlay() {
           top: "50%",
           left: "50%",
           transform: "translate3d(-50%,-50%,0)",
-          display:"flex",
-          justifyContent:"center",
-          alignItems:"center",
-          flexDirection:"column",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
         }}
       >
         <h1
           style={{
             margin: 0,
             padding: 0,
-            fontSize: "10em",
+            fontSize: "6em",
             fontWeight: 500,
             letterSpacing: "-0.05em",
           }}
