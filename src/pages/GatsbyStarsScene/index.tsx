@@ -1,22 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { routeNaming } from "src/constants/route";
+import { Canvas } from "react-three-fiber";
+import Stars from "src/pages/GatsbyStarsScene/components/Stars";
+import Overlay from "src/pages/GatsbyStarsScene/components/Overlay";
+import { OrbitControls } from "@react-three/drei";
 
 const GatsbyStarsScene: React.FC = () => {
   return (
-    <div className="w-full h-screen bg-black overflow-hidden flex flex-col justify-center items-center">
-      <h1 className="text-white text-3xl font-bold">Gatsby Stars Scene</h1>
-      <div className="w-[50%] h-[50%]"></div>
-      <div className="flex">
-        {routeNaming.map((route) => (
-          <button
-            key={route.path}
-            className="py-2 px-6 border border-1 border-white text-white rounded hover:text-green hover:border-green mr-2"
-          >
-            <Link to={route.path}>{route.naming}</Link>
-          </button>
-        ))}
-      </div>
+    <div className="w-screen h-screen">
+      <Canvas camera={{ position: [0, 0, 1] }}>
+        <Stars />
+        <OrbitControls makeDefault />
+      </Canvas>
+      <Overlay />
     </div>
   );
 };
